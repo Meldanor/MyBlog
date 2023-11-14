@@ -1,6 +1,9 @@
 ---
 import fetchApi from '../lib/strapi';
 import type Post from '../interfaces/post';
+import MainLayout from '../layouts/Layout.astro';
+import BlogList from '../components/BlogList.astro';
+import BlogHead from '../components/BlogHead.astro';
 
 const posts = await fetchApi<Post[]>({
   endpoint: 'posts?populate=mainImage', // the content type to fetch
@@ -8,21 +11,7 @@ const posts = await fetchApi<Post[]>({
 });
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Strapi & Astro</title>
-  </head>
-
-  <body>
-    <main>
-      <ul>
-        {
-          posts.map((post: Post) => (
-            <a href={`/blog/${post.attributes.slug}/`}>{post.attributes.title}</a>
-          ))
-        }
-      </ul>
-    </main>
-  </body>
-</html>
+<MainLayout title="Mel's Blog">
+  <BlogHead />
+  <BlogList posts={posts} />
+</MainLayout>

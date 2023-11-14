@@ -1,0 +1,15 @@
+---
+import { Markdown } from '@astropub/md';
+import type Post from '../interfaces/post';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+---
+
+<img src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url} />
+
+<h1>{post.attributes.title}</h1>
+
+<!-- Render plain text -->
+<Markdown of={post.attributes.content} />

@@ -1,0 +1,19 @@
+---
+import type Post from '../interfaces/post';
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+---
+
+<a class="border-2" href={`/blog/${post.attributes.slug}`}>
+  <div class="flex justify-between text-3xl">
+    <h2>
+      {post.attributes.title}
+    </h2>
+    <span>{post.attributes.releaseDate}</span>
+  </div>
+  <p class="overflow-hidden whitespace-nowrap text-ellipsis w-96">
+    {post.attributes.content}
+  </p>
+</a>

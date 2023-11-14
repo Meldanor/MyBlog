@@ -1,7 +1,8 @@
 ---
 import fetchApi from '../../lib/strapi';
 import type Post from '../../interfaces/post';
-import { Markdown } from '@astropub/md';
+import MainLayout from '../../layouts/Layout.astro';
+import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
   const posts = await fetchApi<Post[]>({
@@ -19,20 +20,6 @@ type Props = Post;
 const post = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>{post.attributes.title}</title>
-  </head>
-
-  <body>
-    <main>
-      <img src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url} />
-
-      <h1>{post.attributes.title}</h1>
-
-      <!-- Render plain text -->
-      <Markdown of={post.attributes.content} />
-    </main>
-  </body>
-</html>
+<MainLayout title={post.attributes.title}>
+  <BlogPost post={post} />
+</MainLayout>
