@@ -23,13 +23,18 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
-    },
-    "releaseDate": {
-      "type": "date"
+      "allowedTypes": [
+        "images"
+      ]
     },
     "content": {
       "type": "richtext"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "posts"
     }
   }
 }

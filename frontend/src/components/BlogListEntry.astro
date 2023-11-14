@@ -1,17 +1,23 @@
 ---
 import type Post from '../interfaces/post';
+import CategoryTag from './CategoryTag.astro';
 interface Props {
   post: Post;
 }
 const { post } = Astro.props;
+
+const publishDate = new Date(post.attributes.publishedAt);
+const dateFormat = new Intl.DateTimeFormat('de-DE');
 ---
 
 <a class="border-2" href={`/blog/${post.attributes.slug}`}>
   <div class="flex justify-between text-3xl">
     <h2>
       {post.attributes.title}
+      <CategoryTag category={post.attributes.category.data} />
     </h2>
-    <span>{post.attributes.releaseDate}</span>
+
+    <span>{dateFormat.format(publishDate)}</span>
   </div>
   <p class="overflow-hidden whitespace-nowrap text-ellipsis w-96">
     {post.attributes.content}

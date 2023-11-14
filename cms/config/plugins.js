@@ -4,7 +4,8 @@ module.exports = {
     config: {
       verbose: true,
       actions: {
-        post: ['find', 'findOne']
+        post: ['find', 'findOne'],
+        category: ['find', 'findOne']
       }
     }
   }

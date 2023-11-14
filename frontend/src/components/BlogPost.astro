@@ -1,15 +1,33 @@
 ---
 import { Markdown } from '@astropub/md';
 import type Post from '../interfaces/post';
+import CategoryTag from './CategoryTag.astro';
 interface Props {
   post: Post;
 }
 const { post } = Astro.props;
+const publishDate = new Date(post.attributes.publishedAt);
+const dateFormat = new Intl.DateTimeFormat('de-DE');
 ---
 
-<img src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url} />
+<div class="flex justify-between items-end w-full mb-4">
+  <h2>
+    {post.attributes.title}
+    <CategoryTag category={post.attributes.category.data} />
+  </h2>
+  <span>{dateFormat.format(publishDate)}</span>
+</div>
 
-<h1>{post.attributes.title}</h1>
+<img
+  class="w-full mb-4"
+  src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url}
+/>
 
 <!-- Render plain text -->
 <Markdown of={post.attributes.content} />
+
+<style lang="postcss">
+  h2 {
+    @apply text-4xl underline
+  }
+</style>

@@ -3,10 +3,11 @@ import fetchApi from '../../lib/strapi';
 import type Post from '../../interfaces/post';
 import MainLayout from '../../layouts/Layout.astro';
 import BlogPost from '../../components/BlogPost.astro';
+import BlogHead from '../../components/BlogHead.astro';
 
 export async function getStaticPaths() {
   const posts = await fetchApi<Post[]>({
-    endpoint: 'posts?populate=mainImage',
+    endpoint: 'posts?populate=mainImage,category',
     wrappedByKey: 'data'
   });
 
@@ -21,5 +22,6 @@ const post = Astro.props;
 ---
 
 <MainLayout title={post.attributes.title}>
+  <BlogHead />
   <BlogPost post={post} />
 </MainLayout>

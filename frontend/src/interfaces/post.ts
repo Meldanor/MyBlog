@@ -1,3 +1,4 @@
+import type Category from './category';
 import type Media from './media';
 
 export default interface Post {
@@ -9,9 +10,11 @@ export default interface Post {
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
-    releaseDate: string;
     mainImage: {
       data: Media;
+    };
+    category: {
+      data: Category;
     };
   };
 }
