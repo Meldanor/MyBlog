@@ -1,10 +1,10 @@
-name: build-http-server
+name: build-cms
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - nginx/**
+      - cms/**
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -48,10 +48,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: benjlevesque/short-sha@v2.2
-        id: short-sha
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
         with:
-          length: 6
+          path: cms
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
@@ -60,8 +61,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            http-server-${{ steps.short-sha.outputs.sha }}
-            http-server-latest
+            cms-${{ steps.package-version.outputs.current-version}}
+            cms-latest
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -69,7 +70,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v5
         with:
-          context: nginx/
+          context: cms/
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
