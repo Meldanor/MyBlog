@@ -6,7 +6,7 @@ import BlogList from '../components/BlogList.astro';
 import BlogHead from '../components/BlogHead.astro';
 
 const posts = await fetchApi<Post[]>({
-  endpoint: 'posts?populate=mainImage,category', // the content type to fetch
+  endpoint: 'posts?populate=mainImage,category&sort[0]=publishedAt:desc', // the content type to fetch
   wrappedByKey: 'data' // the key to unwrap the response
 });
 ---

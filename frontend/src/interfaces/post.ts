@@ -7,6 +7,7 @@ export default interface Post {
     title: string;
     slug: string;
     content: string;
+    summary: string;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;

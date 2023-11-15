@@ -35,6 +35,11 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "posts"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 160,
+      "required": true
     }
   }
 }

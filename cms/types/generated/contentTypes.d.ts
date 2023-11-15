@@ -601,6 +601,11 @@ export interface ApiPostPost extends Schema.CollectionType {
     mainImage: Attribute.Media;
     content: Attribute.RichText;
     category: Attribute.Relation<'api::post.post', 'manyToOne', 'api::category.category'>;
+    summary: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

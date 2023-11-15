@@ -10,16 +10,16 @@ const publishDate = new Date(post.attributes.publishedAt);
 const dateFormat = new Intl.DateTimeFormat('de-DE');
 ---
 
-<a class="border-2" href={`/blog/${post.attributes.slug}`}>
+<a class="border-2 p-2 hover:bg-slate-50" href={`/blog/${post.attributes.slug}`}>
   <div class="flex justify-between text-3xl">
-    <h2>
+    <h2 class="flex items-center">
       {post.attributes.title}
       <CategoryTag category={post.attributes.category.data} />
     </h2>
 
     <span>{dateFormat.format(publishDate)}</span>
   </div>
-  <p class="overflow-hidden whitespace-nowrap text-ellipsis w-96">
-    {post.attributes.content}
+  <p class="mt-4">
+    {post.attributes.summary}
   </p>
 </a>
