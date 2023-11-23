@@ -1,0 +1,48 @@
+name: build-and-upload-blog
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - frontend/**
+
+jobs:
+  build:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend/
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+      - name: install npm dependencies
+        run: npm install
+      - name: build astro
+        run: npm run build -- --site=${{ secrets.BLOG_SITE_URL }}
+        env:
+          STRAPI_URL: ${{ secrets.STRAPI_URL }}
+      - name: compress build artefact
+        run: |
+          cd dist
+          tar -czf ../dist.tar.gz .
+      - name: upload file via scp to server
+        uses: betanzos/scp-upload@v1
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USERNAME }}
+          port: ${{ secrets.SCP_PORT }}
+          key: ${{ secrets.SCP_KEY }}
+          source: "frontend/dist.tar.gz"
+          remote_dir: "/home/mel-blog"
+      - name: extract build artefact on server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SCP_HOST }}
+          username: ${{ secrets.SCP_USERNAME }}
+          port: ${{ secrets.SCP_PORT }}
+          key: ${{ secrets.SCP_KEY }}
+          script: rm -rf blog_web_files/* && tar xzf dist.tar.gz -C blog_web_files/
