@@ -22,12 +22,21 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
   class="w-full mb-4"
   src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url}
 />
-
-<!-- Render plain text -->
-<Markdown of={post.attributes.content} />
+<div class="blog-content">
+  <Markdown class:list={'mama'} of={post.attributes.content} />
+</div>
 
 <style lang="postcss">
   h2 {
     @apply text-4xl underline
+  }
+  .blog-content > :global(h2) {
+    @apply text-2xl mt-4
+  }
+  .blog-content > :global(p) {
+    @apply my-4
+  }
+  .blog-content > :global(ol) {
+    @apply list-decimal ml-8;
   }
 </style>
