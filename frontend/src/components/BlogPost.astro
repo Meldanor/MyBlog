@@ -18,11 +18,16 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
   <span>{dateFormat.format(publishDate)}</span>
 </div>
 
-<img
-  class="w-full mb-4"
-  src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url}
-/>
-<div class="blog-content">
+{
+  post.attributes.mainImage.data && (
+    <img
+      class="w-full"
+      src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url}
+    />
+  )
+}
+
+<div class="blog-content mt-8">
   <Markdown class:list={'mama'} of={post.attributes.content} />
 </div>
 
@@ -39,7 +44,6 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
   .blog-content > :global(ol) {
     @apply list-decimal ml-8;
   }
-
   .blog-content > :global(p) > :global(img) {
     @apply mx-auto
   }
