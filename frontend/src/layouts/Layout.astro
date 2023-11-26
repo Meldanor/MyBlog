@@ -22,18 +22,18 @@ const { title } = Astro.props;
     <meta name="keywords" content="computer science, computer games, blog" />
     <title>{title}</title>
   </head>
-  <body>
-    <main>
-      <div class="flex justify-center w-full mt-16">
-        <div class="max-w-5xl w-full">
-          <slot />
-        </div>
+  <body class="px-2">
+    <main class="flex justify-center w-full mt-16">
+      <div class="max-w-5xl w-full">
+        <slot />
       </div>
     </main>
-    <footer class="mt-8 flex gap-4 justify-center items-center w-full">
+    <footer class="mt-8 flex flex-col gap-2 justify-center items-center w-full">
       <p>by <strong>Kilian Gärtner</strong> with Astro&Strapi</p>
-      <p><a class="underline" href="https://kilian-gaertner.dev">Website</a></p>
-      <p><a class="underline" href="https://github.com/Meldanor">GitHub</a></p>
+      <div class="flex gap-4">
+        <a class="underline" href="https://kilian-gaertner.dev">My Website</a>
+        <a class="underline" href="https://github.com/Meldanor">GitHub</a>
+      </div>
     </footer>
   </body>
 </html>

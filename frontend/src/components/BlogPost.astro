@@ -34,9 +34,14 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
     @apply text-2xl mt-4
   }
   .blog-content > :global(p) {
-    @apply my-4
+    @apply my-4 
   }
   .blog-content > :global(ol) {
     @apply list-decimal ml-8;
   }
+
+  .blog-content > :global(p) > :global(img) {
+    @apply mx-auto
+  }
+
 </style>

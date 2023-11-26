@@ -11,13 +11,18 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
 ---
 
 <a class="border-2 p-2 hover:bg-slate-50" href={`/blog/${post.attributes.slug}`}>
-  <div class="flex justify-between text-3xl">
-    <h2 class="flex items-center">
+  <div class="flex justify-between lg:text-3xl text-xl">
+    <h2 class="flex items-center font-bold lg:font-normal">
       {post.attributes.title}
-      <CategoryTag category={post.attributes.category.data} />
+      <div class="hidden lg:block">
+        <CategoryTag category={post.attributes.category.data} />
+      </div>
     </h2>
 
     <span>{dateFormat.format(publishDate)}</span>
+  </div>
+  <div class="lg:hidden ml-[-0.5rem] ">
+    <CategoryTag category={post.attributes.category.data} />
   </div>
   <p class="mt-4">
     {post.attributes.summary}
