@@ -2,6 +2,7 @@
 import { Markdown } from '@astropub/md';
 import type Post from '../interfaces/post';
 import CategoryTag from './CategoryTag.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
 interface Props {
   post: Post;
 }
@@ -18,14 +19,7 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
   <span>{dateFormat.format(publishDate)}</span>
 </div>
 
-{
-  post.attributes.mainImage.data && (
-    <img
-      class="w-full"
-      src={import.meta.env.STRAPI_URL + post.attributes.mainImage.data.attributes.url}
-    />
-  )
-}
+<ResponsiveImage media={post.attributes.mainImage.data} />
 
 <div class="blog-content mt-8">
   <Markdown class:list={'mama'} of={post.attributes.content} />
