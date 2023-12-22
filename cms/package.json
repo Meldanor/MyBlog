@@ -24,6 +24,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
+    "strapi-middleware-upload-plugin-cache": "^2.1.0",
     "styled-components": "5.3.3"
   },
   "author": {
