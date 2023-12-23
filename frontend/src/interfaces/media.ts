@@ -1,17 +1,19 @@
 export default interface Media {
   id: string;
-  attributes: {
-    name: string;
-    alternativeText: string;
-    url: string;
-    previewUrl: string;
-    mime: string;
-    formats: {
-      thumbnail: MediaFormat;
-      small: MediaFormat;
-      large: MediaFormat;
-      medium: MediaFormat;
-    };
+  attributes: Image;
+}
+
+export interface Image {
+  name: string;
+  alternativeText: string;
+  url: string;
+  previewUrl: string;
+  mime: string;
+  formats: {
+    thumbnail: MediaFormat;
+    small: MediaFormat;
+    large: MediaFormat;
+    medium: MediaFormat;
   };
 }
 

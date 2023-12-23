@@ -341,13 +341,13 @@ export interface ApiPostPost extends Schema.CollectionType {
     title: Attribute.String;
     slug: Attribute.UID<'api::post.post', 'title'>;
     mainImage: Attribute.Media;
-    content: Attribute.RichText;
     category: Attribute.Relation<'api::post.post', 'manyToOne', 'api::category.category'>;
     summary: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    content: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

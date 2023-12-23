@@ -1,0 +1,26 @@
+---
+import type { QuoteBlock } from '../../interfaces/rich_content';
+import TextBlockElement from './TextBlockElement.astro';
+interface Props {
+  block: QuoteBlock;
+}
+const { block } = Astro.props;
+---
+
+<blockquote class="my-4">
+  {block.children.map((child) => <TextBlockElement block={child} />)}
+</blockquote>
+
+<style class="postcss">
+  blockquote {
+    @apply mx-8 px-2 bg-gray-200 italic border-r-8 text-lg;
+  }
+
+  blockquote::before {
+    content: '\201C';
+  }
+
+  blockquote::after {
+    content: '\201D';
+  }
+</style>

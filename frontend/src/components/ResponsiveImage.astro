@@ -1,11 +1,11 @@
 ---
-import type Media from '../interfaces/media';
+import type { Image } from '../interfaces/media';
 interface Props {
-  media?: Media;
+  image?: Image;
 }
-const { media } = Astro.props;
+const { image } = Astro.props;
 
-const formatsObj = media && media.attributes.formats;
+const formatsObj = image && image.formats;
 const formats =
   (formatsObj && [formatsObj.large, formatsObj.medium, formatsObj.small, formatsObj.thumbnail]) ||
   [];
@@ -15,7 +15,7 @@ const sources = formats.map((format) => {
     mediaQuery: `(min-width: ${format.width}px)`
   };
 });
-const fallbackUrl = import.meta.env.STRAPI_URL + media?.attributes.url;
+const fallbackUrl = import.meta.env.STRAPI_URL + image?.url;
 ---
 
 {

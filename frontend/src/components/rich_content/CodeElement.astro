@@ -1,0 +1,11 @@
+---
+import type { CodeBlock } from '../../interfaces/rich_content';
+interface Props {
+  block: CodeBlock;
+}
+const { block } = Astro.props;
+---
+
+<code class="whitespace-pre-wrap bg-gray-100 block w-fit my-2">
+  {block.children[0].text}
+</code>

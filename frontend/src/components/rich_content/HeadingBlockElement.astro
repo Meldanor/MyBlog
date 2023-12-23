@@ -1,0 +1,56 @@
+---
+import type { HeadingBlock, TextBlock } from '../../interfaces/rich_content';
+import TextBlockElement from './TextBlockElement.astro';
+
+interface Props {
+  block: HeadingBlock;
+}
+
+const { block } = Astro.props;
+let Element = 'h1';
+switch (block.level) {
+  case 1:
+    Element = 'h1';
+    break;
+  case 2:
+    Element = 'h2';
+    break;
+  case 3:
+    Element = 'h3';
+    break;
+  case 4:
+    Element = 'h4';
+    break;
+  case 5:
+    Element = 'h5';
+    break;
+  case 6:
+    Element = 'h6';
+    break;
+}
+---
+
+<Element class:list={'my-2'}>
+  {block.children.map((child) => <TextBlockElement block={child} />)}
+</Element>
+
+<style lang="postcss">
+  h1 {
+    @apply text-4xl
+  }
+  h2 {
+    @apply text-3xl
+  }
+  h3 {
+    @apply text-2xl
+  }
+  h4 {
+    @apply text-xl
+  }
+  h5 {
+    @apply text-lg
+  }
+  h6 {
+    @apply text-base
+  }
+</style>

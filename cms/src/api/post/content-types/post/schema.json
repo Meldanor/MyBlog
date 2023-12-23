@@ -27,9 +27,6 @@
         "images"
       ]
     },
-    "content": {
-      "type": "richtext"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -39,6 +36,10 @@
     "summary": {
       "type": "string",
       "maxLength": 160,
+      "required": true
+    },
+    "content": {
+      "type": "blocks",
       "required": true
     }
   }

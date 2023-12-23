@@ -1,0 +1,12 @@
+---
+import type { ParagraphBlock } from '../../interfaces/rich_content';
+import TextBlockElement from './TextBlockElement.astro';
+interface Props {
+  block: ParagraphBlock;
+}
+const { block } = Astro.props;
+---
+
+<p class="mt-4">
+  {block.children.map((child) => <TextBlockElement block={child} />)}
+</p>

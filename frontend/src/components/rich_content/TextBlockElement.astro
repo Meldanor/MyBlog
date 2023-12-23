@@ -1,0 +1,31 @@
+---
+import type { TextBlock } from '../../interfaces/rich_content';
+interface Props {
+  block: TextBlock;
+}
+
+const { block } = Astro.props;
+let plainText = false;
+let Element = '';
+let classes = '';
+
+if (block.bold) {
+  Element = 'b';
+} else if (block.code) {
+  Element = 'code';
+  classes = 'bg-gray-100';
+} else if (block.italic) {
+  Element = 'i';
+} else if (block.strikethrough) {
+  Element = 's';
+} else if (block.underline) {
+  Element = 'span';
+  classes = 'underline';
+} else {
+  plainText = true;
+}
+classes += ' my-2';
+---
+
+{plainText && block.text}
+{!plainText && <Element class:list={classes}>{block.text}</Element>}
