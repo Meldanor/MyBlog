@@ -15,7 +15,6 @@ const sources = formats.map((format) => {
     mediaQuery: `(min-width: ${format.width}px)`
   };
 });
-const fallbackUrl = import.meta.env.STRAPI_URL + image?.url;
 ---
 
 {
@@ -24,7 +23,7 @@ const fallbackUrl = import.meta.env.STRAPI_URL + image?.url;
       {sources.map((source) => (
         <source srcset={source.url} media={source.mediaQuery} />
       ))}
-      <img src={fallbackUrl} />
+      <img src={sources[0].url} />
     </picture>
   )
 }
