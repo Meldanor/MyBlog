@@ -1,5 +1,6 @@
 ---
 import type { ParagraphBlock } from '../../interfaces/rich_content';
+import HyperlinkElement from './HyperlinkElement.astro';
 import TextBlockElement from './TextBlockElement.astro';
 interface Props {
   block: ParagraphBlock;
@@ -8,5 +9,13 @@ const { block } = Astro.props;
 ---
 
 <p class="mt-4">
-  {block.children.map((child) => <TextBlockElement block={child} />)}
+  {
+    block.children.map((child) => {
+      if (child.type === 'link') {
+        return <HyperlinkElement block={child} />;
+      } else {
+        return <TextBlockElement block={child} />;
+      }
+    })
+  }
 </p>

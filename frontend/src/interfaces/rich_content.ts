@@ -1,7 +1,7 @@
 import type { Image } from './media';
 
 export interface RichContentBlock {
-  type: 'heading' | 'paragraph' | 'text' | 'list' | 'code' | 'image' | 'quote';
+  type: 'heading' | 'paragraph' | 'text' | 'list' | 'code' | 'image' | 'quote' | 'link';
   children: RichContentBlock[];
 }
 
@@ -13,7 +13,7 @@ export interface HeadingBlock extends RichContentBlock {
 
 export interface ParagraphBlock extends RichContentBlock {
   type: 'paragraph';
-  children: TextBlock[];
+  children: (TextBlock | HyperlinkBlock)[];
 }
 
 export interface QuoteBlock extends RichContentBlock {
@@ -24,6 +24,12 @@ export interface QuoteBlock extends RichContentBlock {
 export interface CodeBlock extends RichContentBlock {
   type: 'code';
   children: TextBlock[];
+}
+
+export interface HyperlinkBlock extends RichContentBlock {
+  type: 'link';
+  children: TextBlock[];
+  url: string;
 }
 
 export interface TextBlock extends RichContentBlock {

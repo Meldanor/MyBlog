@@ -19,7 +19,11 @@ const dateFormat = new Intl.DateTimeFormat('de-DE');
   <span>{dateFormat.format(publishDate)}</span>
 </div>
 
-<ResponsiveImage image={post.attributes.mainImage.data.attributes} />
+{
+  post.attributes.mainImage.data && (
+    <ResponsiveImage image={post.attributes.mainImage.data.attributes} />
+  )
+}
 
 <RichContentElement blocks={post.attributes.content} />
 
