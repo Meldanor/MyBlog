@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "postbuild": "cp public/feed/atom public/feed/rss dist/feed",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier . --write"

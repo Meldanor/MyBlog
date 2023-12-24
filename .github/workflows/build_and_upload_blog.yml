@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - frontend/**
-  
+
   repository_dispatch:
     types:
       - webhook
