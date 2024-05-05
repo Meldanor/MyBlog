@@ -2,8 +2,12 @@
   <h1>Mel's Blog</h1>
 </a>
 <div class="flex flex-row-reverse gap-2 mb-4">
-  <a href="/feed/atom"><img title="Atom feed" width="32" height="32" src="/atom_icon.webp" /></a>
-  <a href="/feed/rss"><img title="RSS 2.0 feed" width="32" height="32" src="/rss_icon.webp" /></a>
+  <a type="application/atom+xml" href="/feed/atom"
+    ><img title="Atom feed" width="32" height="32" src="/atom_icon.webp" /></a
+  >
+  <a type="application/rss+xml" href="/feed/rss"
+    ><img title="RSS 2.0 feed" width="32" height="32" src="/rss_icon.webp" /></a
+  >
 </div>
 <style lang="postcss">
   h1 {
