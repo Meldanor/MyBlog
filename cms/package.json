@@ -1,8 +1,8 @@
 {
   "name": "cms",
   "private": true,
-  "version": "1.2.0",
-  "description": "A Strapi application",
+  "version": "1.2.1",
+  "description": "CMS for Mel's Blog",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -12,24 +12,20 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.1.1"
+    "prettier": "3.2.5"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.16.2",
-    "@strapi/plugin-i18n": "4.16.2",
-    "@strapi/plugin-users-permissions": "4.16.2",
-    "@strapi/strapi": "4.16.2",
-    "better-sqlite3": "8.6.0",
-    "pg": "^8.11.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@strapi/plugin-i18n": "4.24.1",
+    "@strapi/plugin-users-permissions": "4.24.1",
+    "@strapi/strapi": "4.24.1",
+    "better-sqlite3": "9.6.0",
+    "pg": "^8.11.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "5.3.4",
     "strapi-middleware-upload-plugin-cache": "^2.1.0",
     "strapi-plugin-responsive-image": "^1.2.0",
     "styled-components": "5.3.3"
-  },
-  "author": {
-    "name": "A Strapi developer"
   },
   "strapi": {
     "uuid": "0df2bc97-8fe6-4a8b-a467-f38eaad93534",
