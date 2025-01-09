@@ -11,11 +11,14 @@
 
 <body class="grid py-4 mx-auto prose xl:prose-xl min-h-screen" style="grid-template-rows: auto 1fr auto">
     <header class="bg-blue-500">
-        <h1 class="title text-center">Mel's Meinungen</h1>
+        <a href="/">
+            <h1 class="title text-center">Mel's Meinungen</h1>
+        </a>
+
     </header>
     <main class="flex-1 p-4 bg-green-500">
         <section>
-            <div>{% block content %} {% endblock %}</div>
+            {% block content %} {% endblock %}
         </section>
     </main>
     <footer class="text-center bg-red-500">
