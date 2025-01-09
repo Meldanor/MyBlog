@@ -4,10 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>Blog by Mel</title>
+
+    <!-- Stylesheets -->
+    <link href="{{get_url(path='styles/main.css',cachebust=true)}}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <section class="section">
+    <section class="section mx-auto prose lg:prose-lg">
         <div class="container">
             {% block content %} {% endblock %}
         </div>
