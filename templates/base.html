@@ -9,19 +9,19 @@
     <link href="{{get_url(path='styles/main.css',cachebust=true)}}" rel="stylesheet" type="text/css" />
 </head>
 
-<body class="grid py-4 mx-auto prose xl:prose-xl min-h-screen" style="grid-template-rows: auto 1fr auto">
-    <header class="bg-blue-500">
+<body class="grid py-4 mx-auto prose lg:prose-lg 2xl:prose-2xl min-h-screen" style="grid-template-rows: auto 1fr auto">
+    <header>
         <a href="/">
             <h1 class="title text-center">Mel's Meinungen</h1>
         </a>
 
     </header>
-    <main class="flex-1 p-4 bg-green-500">
+    <main class="flex-1 p-4">
         <section>
             {% block content %} {% endblock %}
         </section>
     </main>
-    <footer class="text-center bg-red-500">
+    <footer class="text-center">
         by <strong>Kilian Gärtner</strong> with Zola&Tailwind
     </footer>
 </body>
