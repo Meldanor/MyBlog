@@ -5,16 +5,32 @@
     <meta charset="utf-8" />
     <title>Blog by Mel</title>
 
-    <!-- Stylesheets -->
     <link href="{{get_url(path='styles/main.css',cachebust=true)}}" rel="stylesheet" type="text/css" />
+
+    {% block rss %}
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='rss.xml', trailing_slash=false)
+        }}">
+    {% endblock %}
+
+    {% block atom %}
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path='atom.xml',
+        trailing_slash=false) }}">
+    {% endblock %}
 </head>
 
 <body class="grid py-4 mx-auto prose lg:prose-lg 2xl:prose-2xl min-h-screen" style="grid-template-rows: auto 1fr auto">
     <header>
         <a href="/">
-            <h1 class="title text-center">Mel's Meinungen</h1>
+            <h1 class="text-center !mb-4">Mel's Meinungen</h1>
         </a>
-
+        <div class="not-prose flex flex-row-reverse gap-2 px-4">
+            <a class="flex h-6 lg:h-8" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
+                <img alt="RSS Feed" src="{{ get_url(path='icons/rss_icon.webp' )}}">
+            </a>
+            <a class="flex h-6 lg:h-8" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
+                <img alt="Atom Feed" src="{{ get_url(path='icons/atom_icon.webp' )}}">
+            </a>
+        </div>
     </header>
     <main class="flex-1 p-4">
         <section>
