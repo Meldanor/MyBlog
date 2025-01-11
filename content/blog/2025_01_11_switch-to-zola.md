@@ -1,6 +1,6 @@
 +++
 title = "Switch to Zola"
-date = "2025-01-09"
+date = "2025-01-11"
 
 [extra]
 summary = "Why I made the switch from Astro+Strapi to Zola."
@@ -15,7 +15,9 @@ Markdown files and compiles them to static HTML. Rust ensures a very high perfor
 
 Tailwind is just a convenient utility for writing CSS. Zola itself supports SCSS but my CSS will not be complex enough to justify a SCSS compile. I also had negative experiences with SCSS or SASS in the past because the compilers were slow or buggy and I cannot really understand the advantages of SCSS and SASS with modern CSS. To be honest - and clearly visible by the simple design - I am not a UI and CSS expert. So all in all I like tailwind because it helps me building websites by providing nice utility classes and thats it. I could get away with plain CSS so tailwind is more a convenience than a necessity.
 
-The website will be hosted by a small virtual machine by Hetzner. The static files will be served by [Simple Web Server (sws)](https://simplewebserver.org/), an nginx alternative written in Rust. The reason for it: I want to try it out and it will be enough for my needs. The software serving the static files is not important - it will be deployed with Docker with a Traefik for the reverse proxy.
+The website will be hosted by a small virtual machine by Hetzner. ~~The static files will be served by [Simple Web Server (sws)](https://simplewebserver.org/), an nginx alternative written in Rust. The reason for it: I want to try it out and it will be enough for my needs. The software serving the static files is not important~~ - it will be deployed with Docker with a Traefik for the reverse proxy.
+
+**UPDATE**: While finishing the deployment and stuff I realized that only nginx has the possiblitiy to serve static brotli, zstd and gzip files AND to use automatically Etag bashed caching. Also I linked to wrong server, I wanted to use [Static Web Server](https://static-web-server.net/).
 
 And that is the stack. Zola with Markdown for the content and structure, Tailwind for the "views", sws for serving the files.
 
