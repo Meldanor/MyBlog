@@ -74,6 +74,6 @@ jobs:
             echo "${{ secrets.SCP_KEY }}" > ~/.ssh/id_rsa
             ssh-keyscan -H ${{ secrets.SCP_HOST }} > ~/.ssh/known_hosts
         - name: connect and pull
-          run: ssh ${{ secrets.SCP_USERNAME }}@${{ secrets.SCP_HOST }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up -d && exit"
+          run: ssh ${{ secrets.SCP_USERNAME }}@${{ secrets.SCP_HOST }} "cd ${{ secrets.WORK_DIR }} && docker compose pull && docker compose up --force-recreate --build -d && exit"
         - name: cleanup
           run: rm -rf ~/.ssh
