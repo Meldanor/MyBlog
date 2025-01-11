@@ -2,7 +2,7 @@ name: deploy-blog
 
 on:
   push:
-    # branches: [ "main" ]
+    branches: [ "main" ]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -11,7 +11,6 @@ env:
 
 jobs:
   build:
-    # if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
