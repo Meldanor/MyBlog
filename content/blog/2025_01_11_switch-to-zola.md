@@ -11,7 +11,7 @@ Welcome to the newest version of my blog! In this very first page I want to try 
 ### The new one
 
 You are currently looking at the new version with [Zola](https://www.getzola.org/) and [Tailwind](https://tailwindcss.com/). Zola is a static side generator written in Rust. It takes
-Markdown files and compiles them to static HTML. Rust ensures a very high performance and using Rust ecosystems improves the Rust ecosystem in general - I hope so. Later I will explain this reasoning in detail.
+Markdown files and compiles them to static HTML. Rust ensures a very high performance and using Rust ecosystems improves the Rust ecosystem in general - I hope so. In later posts I will explain this reasoning in detail.
 
 Tailwind is just a convenient utility for writing CSS. Zola itself supports SCSS but my CSS will not be complex enough to justify a SCSS compile. I also had negative experiences with SCSS or SASS in the past because the compilers were slow or buggy and I cannot really understand the advantages of SCSS and SASS with modern CSS. To be honest - and clearly visible by the simple design - I am not a UI and CSS expert. So all in all I like tailwind because it helps me building websites by providing nice utility classes and thats it. I could get away with plain CSS so tailwind is more a convenience than a necessity.
 
@@ -19,7 +19,7 @@ The website will be hosted by a small virtual machine by Hetzner. ~~The static f
 
 **UPDATE**: While finishing the deployment and stuff I realized that only nginx has the possiblitiy to serve static brotli, zstd and gzip files AND to use automatically Etag bashed caching. Also I linked to wrong server, I wanted to use [Static Web Server](https://static-web-server.net/).
 
-And that is the stack. Zola with Markdown for the content and structure, Tailwind for the "views", sws for serving the files.
+And that is the stack. Zola with Markdown for the content and structure, Tailwind for the "views", ~~sws~~ nginx for serving the files.
 
 ### The old one
 
