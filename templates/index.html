@@ -7,14 +7,13 @@
         <a href="{{ page.permalink | safe}}">
             <div class="flex align-bottom items-end">
                 <h2 class="!my-0">{{ page.title }}</h3>
-                <span class="ml-auto">{{ page.date }}</h5>
+                    <span class="ml-auto">{{ page.date }}</h5>
             </div>
         </a>
         <p class="pl-0 !mb-0">
             {{page.extra.summary}}
         </p>
     </div>
-
     {% endfor %}
 </div>
 {% endblock content %}

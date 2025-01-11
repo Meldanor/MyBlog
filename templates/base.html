@@ -2,8 +2,36 @@
 <html lang="en">
 
 <head>
+    {% set meta_title = config.title %}
+    {% set meta_description = config.description %}
+
+    {% if page %}
+    {% set meta_title = page.title ~ ' - ' ~ config.title %}
+    {% set meta_description = page.extra.summary %}
+    {% endif %}
+
+    <title>{{ meta_title }}</title>
+
+    <!-- Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta charset="utf-8" />
-    <title>Blog by Mel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="{{ meta_title }}" />
+    <meta name="description" content="{{ meta_description }}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{get_url(path='icons/favicon-16x16.png',
+                                            cachebust=true)}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ current_url }}" />
+    <meta property="og:title" content="{{ meta_title }}" />
+    <meta property="og:description" content="{{ meta_description }}" />
+    <meta property="og:image" content="{{get_url(path='icons/og_image.webp',cachebust=true)}}" />
 
     <link href="{{get_url(path='styles/main.css',cachebust=true)}}" rel="stylesheet" type="text/css" />
 
@@ -25,10 +53,10 @@
         </a>
         <div class="not-prose flex flex-row-reverse gap-2 px-4">
             <a class="flex h-6 lg:h-8" href="{{ get_url(path='rss.xml', trailing_slash=false) }}">
-                <img alt="RSS Feed" src="{{ get_url(path='icons/rss_icon.webp' )}}">
+                <img height="32" width="32" alt="RSS Feed" src="{{ get_url(path='icons/rss_icon.webp' )}}">
             </a>
             <a class="flex h-6 lg:h-8" href="{{ get_url(path='atom.xml', trailing_slash=false) }}">
-                <img alt="Atom Feed" src="{{ get_url(path='icons/atom_icon.webp' )}}">
+                <img height="32" width="32" alt="Atom Feed" src="{{ get_url(path='icons/atom_icon.webp' )}}">
             </a>
         </div>
     </header>
