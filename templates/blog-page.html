@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="p-2">
+    <div class="flex align-bottom items-end">
+        <h2 class="!my-0">
+            {{ page.title }}
+        </h2>
+        <span class="ml-auto">
+            {{ page.date }}
+        </span>
+    </div>
+    {{ page.content | safe }}
+</article>
+{% endblock content %}

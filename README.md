@@ -1,12 +1,33 @@
-# Mel Blog
+# Mel Block
 
-A static site blog based of Strapi+Astro.
+A static site blog created by [Zola](https://www.getzola.org/).
 
-## Architecture
+## Usage
 
-There are three components for this one:
+## Requirements
 
-1. A Strapi CMS that is running on the server and holds the blog as data in sqllite.
-2. An nginx server that is running on the server and serves the blog content.
-3. An astro repository that is used to build the blog by fetching the data at build time from strapi. The GitHub CI will run the build and push the generated files to the server. Astro itself will NOT run on the server, but only in the CI.
+The following software must be installed to develop the blog locally:
 
+- [zola](https://www.getzola.org/documentation/getting-started/installation/)
+- node.js
+
+### Development
+
+Start tailwind and
+
+    npx tailwindcss -i src-styles/base.css -o static/styles/main.css --watch & zola serve
+
+### Build
+
+    npx tailwindcss -i src-styles/base.css -o static/styles/main.css --minify
+    zola build
+
+## License
+
+MIT
+
+## Thanks
+
+### [Zola TailwindCSS Template](https://github.com/coastalwhite/zola-tailwind)
+
+Inspiration how to combine zola and tailwind.
