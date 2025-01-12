@@ -31,3 +31,7 @@ MIT
 ### [Zola TailwindCSS Template](https://github.com/coastalwhite/zola-tailwind)
 
 Inspiration how to combine zola and tailwind.
+
+### [Flowbite Darkmode](https://flowbite.com/docs/customize/dark-mode/)
+
+Implementation of a dark mode toggle

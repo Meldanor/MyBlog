@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'selector',
   content: ["./templates/**/*.html"],
   theme: {
     extend: {},
