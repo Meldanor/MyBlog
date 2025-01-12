@@ -1,0 +1,8 @@
+{% set image = resize_image(path=path, height=size, width=size, op=op, format=format) %}
+
+<div class="not-prose flex justify-center">
+    <a href="{{ get_url(path=path) }}" target="_blank">
+        <img src="{{ image.url }}" />
+    </a>
+</div>
+<p class="!my-0 text-center text-sm">{{ body }}</p>
