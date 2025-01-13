@@ -8,7 +8,7 @@ summary = "Why I made the switch from Astro+Strapi to Zola."
 
 Welcome to the newest version of my blog! In this very first page I want to try out the new stuff and explain why I made the switch from my previous stack to the current one.
 
-### The new one
+### New stack
 
 You are currently looking at the new version with [Zola](https://www.getzola.org/) and [Tailwind](https://tailwindcss.com/). Zola is a static side generator written in Rust. It takes
 Markdown files and compiles them to static HTML. Rust ensures a very high performance and using Rust ecosystems improves the Rust ecosystem in general - I hope so. In later posts I will explain this reasoning in detail.
@@ -21,7 +21,7 @@ The website will be hosted by a small virtual machine by Hetzner. ~~The static f
 
 And that is the stack. Zola with Markdown for the content and structure, Tailwind for the "views", ~~sws~~ nginx for serving the files.
 
-### The old one
+### Old stack
 
 Before I get to the reasons for the switch I want to quickly sketch the old stack. The old stack used [Astro](https://astro.build/) written in Javascript and [Strapi](https://strapi.io/) as the headless CMS.
 
@@ -47,6 +47,6 @@ The integration with tailwind is ... okay. I tried using the tailwind CLI and it
 
 The template engine is okay and the documentation seems great. But I don't really like the syntax or the lack of a good autoformatter.
 
-### The old blog
+### Hiding the old blog
 
-Yeah, that died with this release. I have the files on my server as a backup but I don't want to convert the few blog entries. I was also a bit ashamed of the content.
+Yeah, that died with this release. I have the files on my server as a backup but I don't want to convert the few blog entries. I was also a bit ashamed of the content. Maybe I will add a link the old blog somewhere on this side, but I will no migrate the texts.
