@@ -1,6 +1,6 @@
 +++
 title = "Godot and Bevy"
-date = "2025-01-12"
+date = "2025-01-13"
 
 [extra]
 summary = "Great Open Source gaming engines I used to learn game dev"
@@ -17,16 +17,17 @@ I tried these two beautiful engines over the last one and a half years and now I
     </a>
 </div>
 
-*Disclaimer*: I've not published a full game with any of these engines nor with any other engine. I'm a software engineer with near decade experience of shipping web dev oriented projects. I'm not an experienced game developer, but I really like to game and interested in the working aspect of the industry.
+_Disclaimer_: I've not published a full game with any of these engines nor with any other engine. I'm a software engineer with near decade experience of shipping web dev oriented projects. I'm not an experienced game developer, but I really like to game and interested in the working aspect of the industry.
 
 ## Experience with Godot
 
 I started learning Godot when the 4.0 was released in March 2023. I knew Godot existed but wasn't interested in it. After watching a few videos and read some tutorials I was hooked and tried my first small projects to learn it. I bought some assets or downloaded free assets because my drawing is bad and while I love music I'm not a musician.
 
 ### Prototypes to learn
+
 I realized quickly that while I had ideas for my first game I need to learn stuff and build various prototypes.
 
-These two projects were my first. A simple movement "game" to try out tilemaps, collisions and first code. The second game was a simple "interaction" game where you have to milk cows. 
+These two projects were my first. A simple movement "game" to try out tilemaps, collisions and first code. The second game was a simple "interaction" game where you have to milk cows.
 
 {% centered_thumbnail(path="images/godot-projects/CrashCourse.png", size=400, op="fit", format="webp", quality="75") %}
 The tutorial
@@ -52,7 +53,7 @@ I found some good plugins like [Godot State Charts](https://github.com/derkork/g
 A simple shooter defending against zombies. Awesome music "Frog" by DEgITx music
 {% end %}
 
-I realized that good lighting is very hard even for a simple 2D game. 
+I realized that good lighting is very hard even for a simple 2D game.
 
 All these small projects were realized in a week or month each and all created in Godot 4.0. I've written a small retro for myself and showed these games to friends. I always wanted to FINISH them and I achieved it. The prototypes were not good or polished. But they were "finished" and I learned much. After that I wanted to create my own full game in the near future.
 
@@ -68,7 +69,7 @@ I got stuck in the mechanics of the game and with generating the world. I couldn
 
 So I've lost interest in the GameDev part for a year but was interested in learning more and more.
 
-There was a VERY SMALL prototype for a Factorio clone but I couldn't find a good reason why not developing a mod instead of a full game. I tried more and more community plugins especially dialogue and AI systems. Both are not present in Godot but are provided by plugins. 
+There was a VERY SMALL prototype for a Factorio clone but I couldn't find a good reason why not developing a mod instead of a full game. I tried more and more community plugins especially dialogue and AI systems. Both are not present in Godot but are provided by plugins.
 
 I had a good idea for a Zelda / Moonlighter clone with a heavy story and relation focus. I build my basics and abstracted stuff to easily produce new enemies. I even tried my first pixel art. The picture speaks for itself. But I'm very proud of my slime! It even has some animations. This project taught me more about style and pixel art, but the dialogue system in the plugin was okay. The UX was terrible and I can't blame anybody developing the plugin for free. In the end I dropped the project.
 
@@ -78,13 +79,14 @@ First pixel art try with a try-out level
 
 ### Summary of Godot
 
-Godot is not to blame for not finishing a game. It is a wonderful engine and the community is engaged. I was mostly interested in making games because the Godot community and the core team were motivated. They stood against Unity, Unreal and ... Cry Engine? I was inexperienced and there was real life stuff and my motivation is always a problem. 
+Godot is not to blame for not finishing a game. It is a wonderful engine and the community is engaged. I was mostly interested in making games because the Godot community and the core team were motivated. They stood against Unity, Unreal and ... Cry Engine? I was inexperienced and there was real life stuff and my motivation is always a problem.
 
-My critique is that Godot GDScript isn't very good. It is great for new developers because it is as simple as python it. But it is a new language. Namespaces are missing at the moment, typing is "duck typing" (and I really hate this approach). There are some basic mechanics missing like AI, StateMachine or simple Dialog Systems. Godot is made for general application and not only games. The core team is small in comparison to Unity. They have to keep the maintenance low and have higher priority stuff. But in general it feels like these are missing. 
+My critique is that Godot GDScript isn't very good. It is great for new developers because it is as simple as python it. But it is a new language. Namespaces are missing at the moment, typing is "duck typing" (and I really hate this approach). There are some basic mechanics missing like AI, StateMachine or simple Dialog Systems. Godot is made for general application and not only games. The core team is small in comparison to Unity. They have to keep the maintenance low and have higher priority stuff. But in general it feels like these are missing.
 
 Uh! And I hate the UI. It just stinks. I cannot understand why people like it. I watched multiple tutorials and could not understand why they didn't want to use an approach like the web with flex, grid and stuff. I know that there are good applications like the Editor itself that could make it work. But man. I always hated doing the UI. Especially the non-reactive way of doing the UI. A variable has changed? Manually update the text in the component instead of binding them together like in React or Vue.
 
 I will keep being a sponsor for Godot even when I'm not using it or plan to use it. I believe in their idea and wish them the best. I see the improvements and follow the blogs.
 
 ## And there was Bevy
+
 Damn, this blog is long enough. I think I will talk about bevy in a new blog entry. Thank you for reading.
