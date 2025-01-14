@@ -71,7 +71,7 @@ So I've lost interest in the GameDev part for a year but was interested in learn
 
 There was a VERY SMALL prototype for a Factorio clone but I couldn't find a good reason why not developing a mod instead of a full game. I tried more and more community plugins especially dialogue and AI systems. Both are not present in Godot but are provided by plugins.
 
-I had a good idea for a Zelda / Moonlighter clone with a heavy story and relation focus. I build my basics and abstracted stuff to easily produce new enemies. I even tried my first pixel art. The picture speaks for itself. But I'm very proud of my slime! It even has some animations. This project taught me more about style and pixel art, but the dialogue system in the plugin was okay. The UX was terrible and I can't blame anybody developing the plugin for free. In the end I dropped the project.
+I had a good idea for a Zelda / Moonlighter clone with a heavy story and relation focus. I build my basics and abstracted stuff to easily produce new enemies. I even tried my first pixel art. The picture speaks for itself. But I'm very proud of my slime! It even has some animations. This project taught me more about style and pixel art, but the dialogue system in the plugin was okay. The UX was not really good and I can't blame anybody developing a plugin for free. In the end I dropped the project because I was busy with other stuff. And with the Factorio DLC. 
 
 {% centered_thumbnail(path="images/godot-projects/Hero Out of Necessity.png", size=400, op="fit", format="webp", quality="75") %}
 First pixel art try with a try-out level
@@ -79,13 +79,20 @@ First pixel art try with a try-out level
 
 ### Summary of Godot
 
-Godot is not to blame for not finishing a game. It is a wonderful engine and the community is engaged. I was mostly interested in making games because the Godot community and the core team were motivated. They stood against Unity, Unreal and ... Cry Engine? I was inexperienced and there was real life stuff and my motivation is always a problem.
+*UPDATE from 2025-01-14* : I've rewritten this section a bit because it was a bit too negative and felt like hating Godot. The original is in the repository. This section explains my issues with the engine and its impact on my already weak motivation to finish the games.
 
-My critique is that Godot GDScript isn't very good. It is great for new developers because it is as simple as python it. But it is a new language. Namespaces are missing at the moment, typing is "duck typing" (and I really hate this approach). There are some basic mechanics missing like AI, StateMachine or simple Dialog Systems. Godot is made for general application and not only games. The core team is small in comparison to Unity. They have to keep the maintenance low and have higher priority stuff. But in general it feels like these are missing.
+Godot is a wonderful engine and has a wide community with many plugins. The engine is clearly technical able to ship and develop small to mid-games, maybe even huge games like Witcher 3. For games in this size you always have to modify the engine to fit your needs. Or write your own.
 
-Uh! And I hate the UI. It just stinks. I cannot understand why people like it. I watched multiple tutorials and could not understand why they didn't want to use an approach like the web with flex, grid and stuff. I know that there are good applications like the Editor itself that could make it work. But man. I always hated doing the UI. Especially the non-reactive way of doing the UI. A variable has changed? Manually update the text in the component instead of binding them together like in React or Vue.
+If you have a special need there is a high possibility that there is a plugin for it. I've used plugins for state machines, for dialogues and for generating terrain. These people are basically working for free so you can make games. They are not only writing the plugin, they are publishing it, maintaining it, writing documentations for it and just polish it. This is awesome and huge kudos to all of them.
 
-I will keep being a sponsor for Godot even when I'm not using it or plan to use it. I believe in their idea and wish them the best. I see the improvements and follow the blogs.
+But I had problems with these plugins by third parties. The quality of documentation and the plugins varies. You can search for a functionality and find multiple plugins in different states for it. A crucial plugin can be abandoned a few days before your release. You can fix them - they are open source - but it adds a new mental load to your capacity. Your priority should be the game.
+In the end - it is free and it is hard to argue against the efforts of people doing something for your for free. In my case the hunt for good plugins and understand them was one part of my dwindling motivation. I wish some functions were part of the engine itself and maintained and quality controlled by the team. Like state machines, basic AI or dialogs.
+
+The second problem was the primary scripting language - GDScript. It is fine and I was able to quickly understand and use it. But it is a new language you have to learn and there are different function names and different pattern the language prefers. It is also not complete. Namespaces are missing and you ran into the risk of having duplicate class names. Typing is optionally and not completly there - Arrays and their function are weird. I've seen a wide range of languages and not one is perfect. But the decision to create and maintain a own language is strange to me. It adds unnecessary load to the maintainer of Godot that could be avoided by using an established language like Python. There is C# and other language bindings - but the main language is GDScript. C++ is also possible because it is an engine, but how wants to write C++ in this era? 
+
+The last point is the ... strange UI framework. I could not wrap my head around how it really works in the end. It was happy that the buttons were on the right position. For my resolution. For my window ratio. I always feared that other resolutions or ratio would totally fall fail. I wish they would have adopted something like the web did in the last decade. Bind data to UI and make it reactive. Instead I have to watch for events and explicitly update all UI elements. While I had ideas for management or UI heavy games - I dropped them because I could not see myself creating such UIs.
+
+I will keep being a sponsor for Godot even when I'm not using it or plan to use it for the next time. I believe in their idea and wish them the best. I see the improvements and follow the blogs.
 
 ## And there was Bevy
 
