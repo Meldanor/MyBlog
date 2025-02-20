@@ -1,5 +1,7 @@
 # Mel Block
 
+ARCHIVED: This repository is archived because it was integrated into my [Personal Website](https://kiliangaertner.de/) and its [repository](https://github.com/Meldanor/PersonalWebpage) !
+
 A static site blog created by [Zola](https://www.getzola.org/).
 
 ## Usage
